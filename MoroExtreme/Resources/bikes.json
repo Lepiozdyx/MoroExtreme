@@ -1,0 +1,128 @@
+[
+  {
+    "id": "mountain",
+    "name": "Mountain (MTB)",
+    "shortDescription": "For off-road adventures. Loves mountains, mud, and freedom!",
+    "fullDescription": "Meet the Mountain King! He's fearless — mud, rocks, and steep trails are his playground. Those big knobby tires and strong suspension are built to take a beating. With him, you can climb high, fly down slopes, and roll through forests without a worry. He's the true spirit of adventure on two wheels. Just don't forget your helmet — things might get wild out there!",
+    "imageName": "mtb",
+    "features": [
+      {
+        "text": "off-road, trails, mountains",
+        "isPositive": true
+      },
+      {
+        "text": "durable, grippy, powerful suspension",
+        "isPositive": true
+      },
+      {
+        "text": "heavy, slower on asphalt",
+        "isPositive": false
+      }
+    ]
+  },
+  {
+    "id": "road",
+    "name": "Road",
+    "shortDescription": "Speed and wind! Its element is smooth asphalt.",
+    "fullDescription": "Hey there! This is my buddy — the Road Racer. Sleek, light, and fast — built for pure speed on smooth asphalt. See those super-thin drop bars and paper-thin tires? They slice through the air like a pro. On him, you'll feel the wind, the rhythm, and the freedom of endless roads. But keep him away from gravel or potholes — he's all about perfection and performance.",
+    "imageName": "road",
+    "features": [
+      {
+        "text": "asphalt, speed, long distances",
+        "isPositive": true
+      },
+      {
+        "text": "light, fast, aerodynamic",
+        "isPositive": true
+      },
+      {
+        "text": "not for rough terrain, needs smooth roads",
+        "isPositive": false
+      }
+    ]
+  },
+  {
+    "id": "city",
+    "name": "City",
+    "shortDescription": "Comfort and style for everyday rides around town.",
+    "fullDescription": "Here's the City Rider — stylish, comfortable, and ready for daily life. He's your best friend for commuting, coffee runs, or lazy weekend rides. The upright position lets you enjoy the view, while the smooth ride keeps things chill. No rush, no stress — just easy motion through the streets. Perfect for those who like to ride smart and arrive with a smile.",
+    "imageName": "city",
+    "features": [
+      {
+        "text": "everyday rides, commuting, comfort",
+        "isPositive": true
+      },
+      {
+        "text": "easy to ride, comfortable, practical",
+        "isPositive": true
+      },
+      {
+        "text": "not built for long distances or trails",
+        "isPositive": false
+      }
+    ]
+  },
+  {
+    "id": "gravel",
+    "name": "Gravel",
+    "shortDescription": "The all-rounder: asphalt, dirt, or trail — it handles it all!",
+    "fullDescription": "This one's the Gravel Buddy — the explorer of the bunch! He's half road bike, half mountain spirit, and 100% freedom. Dirt paths, forest trails, or endless country roads — he loves them all. With wider tires and a sturdy frame, he's ready for anything that comes his way. He doesn't rush, he just enjoys going steady, mile after mile. If you love discovery and the feeling of endless horizons, this one's your perfect companion for every ride.",
+    "imageName": "gravel",
+    "features": [
+      {
+        "text": "mixed surfaces, gravel, exploration",
+        "isPositive": true
+      },
+      {
+        "text": "versatile, stable, durable",
+        "isPositive": true
+      },
+      {
+        "text": "not as fast as a road bike, not as strong as an MTB",
+        "isPositive": false
+      }
+    ]
+  },
+  {
+    "id": "bmx",
+    "name": "BMX",
+    "shortDescription": "Small but bold. Jumps, spins, and knows no limits!",
+    "fullDescription": "BMX — the little rebel with a big heart! Short frame, strong wheels, and an attitude that screams adventure. He lives for tricks, jumps, spins, wall rides, and impossible stunts that somehow always work. Watch him fly in skateparks, on ramps, or just ruling the streets with pure style. He's always ready to surprise. If you love energy, tricks, and a bit of chaos, BMX will become your favorite partner in fun.",
+    "imageName": "bmx",
+    "features": [
+      {
+        "text": "tricks, skateparks, short rides",
+        "isPositive": true
+      },
+      {
+        "text": "compact, strong, maneuverable",
+        "isPositive": true
+      },
+      {
+        "text": "not for long rides or hills",
+        "isPositive": false
+      }
+    ]
+  },
+  {
+    "id": "folding",
+    "name": "Folding",
+    "shortDescription": "The foldable genius — perfect for the subway, the office, or your next trip.",
+    "fullDescription": "Say hi to the Folding Genius — the ultimate city smarty. Small, clever, and always one step ahead. In seconds, he folds up neatly and hops into the subway, elevator, or car trunk without breaking a sweat. Perfect for anyone who loves to move freely around the city — from office to cafe. He's all about comfort, practicality, and freedom to go wherever you want, whenever you want. Compact in size, but big in personality — that's his magic!",
+    "imageName": "folding",
+    "features": [
+      {
+        "text": "city commuting, travel, portability",
+        "isPositive": true
+      },
+      {
+        "text": "compact, easy to store, convenient",
+        "isPositive": true
+      },
+      {
+        "text": "small wheels, less speed",
+        "isPositive": false
+      }
+    ]
+  }
+]

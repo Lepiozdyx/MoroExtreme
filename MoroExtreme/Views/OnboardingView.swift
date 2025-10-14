@@ -2,37 +2,32 @@ import SwiftUI
 
 struct OnboardingView: View {
     @State private var currentPage = 0
-    @State private var userName = ""
-    @State private var keyboardHeight: CGFloat = 0
-    
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding: Bool = false
+    
+    private let pages: [(image: ImageResource, text: String)] = [
+        (.onboarding1, "Hi! I'm Moro. I've ridden every track there is and know everything about bikes."),
+        (.onboarding2, "Let me help you find the perfect two-wheeled ride for you."),
+        (.onboarding3, "Just pick a type — and I'll explain everything in simple terms! Ready to roll?")
+    ]
 
     var body: some View {
         ZStack {
-            Group {
-                switch currentPage {
-                case 0:
-                    OnboardingPage1()
-                case 1:
-                    OnboardingPage2()
-                case 2:
-                    OnboardingPage3()
-                default:
-                    OnboardingPage1()
-                }
-            }
+            OnboardingPage(
+                image: pages[currentPage].image,
+                text: pages[currentPage].text
+            )
             .animation(.default, value: currentPage)
             
             VStack {
                 Spacer()
                 
                 VStack(spacing: 16) {
-                    PageIndicator(currentPage: currentPage, totalPages: 3)
+                    PageIndicator(currentPage: currentPage, totalPages: pages.count)
                     
                     ActionButton(
-                        title: currentPage == 2 ? "Start" : "Next"
+                        title: currentPage == pages.count - 1 ? "Start" : "Next"
                     ) {
-                        if currentPage < 2 {
+                        if currentPage < pages.count - 1 {
                             withAnimation(.spring()) {
                                 currentPage += 1
                             }
@@ -43,6 +38,27 @@ struct OnboardingView: View {
                 }
                 .padding(.bottom, 30)
             }
+        }
+    }
+}
+
+struct OnboardingPage: View {
+    let image: ImageResource
+    let text: String
+    
+    var body: some View {
+        VStack(spacing: -50) {
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity)
+                .ignoresSafeArea()
+            
+            Text(text)
+                .font(.system(size: 28, weight: .bold))
+                .multilineTextAlignment(.center)
+            
+            Spacer()
         }
     }
 }
@@ -75,60 +91,6 @@ struct PageIndicator: View {
     }
 }
 
-struct OnboardingPage1: View {
-    var body: some View {
-        VStack(spacing: -50) {
-            Image(.onboarding1)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity)
-                .ignoresSafeArea()
-            
-            Text("Hi! I’m Moro. I’ve ridden every track there is and know everything about bikes.")
-                .font(.system(size: 28, weight: .bold))
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-        }
-    }
-}
-
-struct OnboardingPage2: View {
-    var body: some View {
-        VStack(spacing: -50) {
-            Image(.onboarding2)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity)
-                .ignoresSafeArea()
-            
-            Text("Let me help you find the perfect two-wheeled ride for you.")
-                .font(.system(size: 28, weight: .bold))
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-        }
-    }
-}
-
-struct OnboardingPage3: View {
-    var body: some View {
-        VStack(spacing: -50) {
-            Image(.onboarding3)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity)
-                .ignoresSafeArea()
-            
-            Text("Just pick a type — and I’ll explain everything in simple terms! Ready to roll?")
-                .font(.system(size: 28, weight: .bold))
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-        }
-    }
-}
-
 struct ActionButton: View {
     let title: String
     let action: () -> Void
@@ -136,7 +98,7 @@ struct ActionButton: View {
     var body: some View {
         Button {
             action()
-        }label: {
+        } label: {
             Text(title)
                 .foregroundColor(.white)
                 .font(.system(size: 32, weight: .heavy, design: .default))

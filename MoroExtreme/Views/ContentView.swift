@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MoroExtreme
-//
-//  Created by Alex on 14.10.2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {

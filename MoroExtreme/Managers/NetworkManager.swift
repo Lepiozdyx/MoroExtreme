@@ -7,7 +7,7 @@ import FirebaseMessaging
 class NetworkManager: ObservableObject {
     @Published private(set) var targetURL: URL?
     
-    static let BASE_URL = "https://moroextrepla.com/install"
+    static let baseURL = "https://moroextrepla.com/install"
     private let storage: UserDefaults
     private var didSaveURL = false
     private let requestTimeout: TimeInterval = 5.0
@@ -18,7 +18,7 @@ class NetworkManager: ObservableObject {
     }
     
     static func isInitialURL(_ url: URL) -> Bool {
-        guard let baseURL = URL(string: BASE_URL),
+        guard let baseURL = URL(string: baseURL),
               url.host == baseURL.host,
               url.path == baseURL.path else {
             return false
@@ -27,8 +27,8 @@ class NetworkManager: ObservableObject {
     }
     
     static func getInitialURL(fcmToken: String) -> URL {
-        guard var components = URLComponents(string: BASE_URL) else {
-            fatalError("Invalid BASE_URL: \(BASE_URL)")
+        guard var components = URLComponents(string: baseURL) else {
+            fatalError("Invalid BASE_URL: \(baseURL)")
         }
         
         var queryItems = components.queryItems ?? []
@@ -43,8 +43,8 @@ class NetworkManager: ObservableObject {
     }
     
     static var initialURL: URL {
-        guard let url = URL(string: BASE_URL) else {
-            fatalError("Invalid BASE_URL: \(BASE_URL)")
+        guard let url = URL(string: baseURL) else {
+            fatalError("Invalid BASE_URL: \(baseURL)")
         }
         return url
     }
